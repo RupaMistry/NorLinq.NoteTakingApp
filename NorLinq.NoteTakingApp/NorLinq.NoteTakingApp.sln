@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{656AD625-02CB-4200-8B20-1E62E8A1850A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{CC083FD2-0273-4BBD-BFE5-F40874F35303}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{15C4AE2C-C5BE-4E27-9A19-C7ED4B873C4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorLinq.NoteTakingApp.API", "NorLinq.NoteTakingApp.API\NorLinq.NoteTakingApp.API.csproj", "{E62A9191-11FD-483A-8EA4-37DE017C07C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorLinq.NoteTakingApp.Domain", "NorLinq.NoteTakingApp.Domain\NorLinq.NoteTakingApp.Domain.csproj", "{D1248939-5A2B-4E86-B1D4-31120A34CEF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorLinq.NoteTakingApp.Infrastructure", "NorLinq.NoteTakingApp.Infrastructure\NorLinq.NoteTakingApp.Infrastructure.csproj", "{87B142A6-04DE-4206-AFE4-59ACEC249B00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorLinq.NoteTakingApp.Application", "NorLinq.NoteTakingApp.Application\NorLinq.NoteTakingApp.Application.csproj", "{E1A226D5-7A9D-4E99-96D6-E5F61123E415}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorLinq.NoteTakingApp.Tests", "NorLinq.NoteTakingApp.Tests\NorLinq.NoteTakingApp.Tests.csproj", "{8E708A02-783F-4E64-B9D8-3D81D581B9EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E62A9191-11FD-483A-8EA4-37DE017C07C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E62A9191-11FD-483A-8EA4-37DE017C07C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E62A9191-11FD-483A-8EA4-37DE017C07C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E62A9191-11FD-483A-8EA4-37DE017C07C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1248939-5A2B-4E86-B1D4-31120A34CEF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1248939-5A2B-4E86-B1D4-31120A34CEF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1248939-5A2B-4E86-B1D4-31120A34CEF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1248939-5A2B-4E86-B1D4-31120A34CEF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87B142A6-04DE-4206-AFE4-59ACEC249B00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87B142A6-04DE-4206-AFE4-59ACEC249B00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87B142A6-04DE-4206-AFE4-59ACEC249B00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87B142A6-04DE-4206-AFE4-59ACEC249B00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1A226D5-7A9D-4E99-96D6-E5F61123E415}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1A226D5-7A9D-4E99-96D6-E5F61123E415}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1A226D5-7A9D-4E99-96D6-E5F61123E415}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1A226D5-7A9D-4E99-96D6-E5F61123E415}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E708A02-783F-4E64-B9D8-3D81D581B9EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E708A02-783F-4E64-B9D8-3D81D581B9EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E708A02-783F-4E64-B9D8-3D81D581B9EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E708A02-783F-4E64-B9D8-3D81D581B9EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CC083FD2-0273-4BBD-BFE5-F40874F35303} = {656AD625-02CB-4200-8B20-1E62E8A1850A}
+		{15C4AE2C-C5BE-4E27-9A19-C7ED4B873C4A} = {656AD625-02CB-4200-8B20-1E62E8A1850A}
+		{E62A9191-11FD-483A-8EA4-37DE017C07C7} = {CC083FD2-0273-4BBD-BFE5-F40874F35303}
+		{D1248939-5A2B-4E86-B1D4-31120A34CEF4} = {CC083FD2-0273-4BBD-BFE5-F40874F35303}
+		{87B142A6-04DE-4206-AFE4-59ACEC249B00} = {CC083FD2-0273-4BBD-BFE5-F40874F35303}
+		{E1A226D5-7A9D-4E99-96D6-E5F61123E415} = {CC083FD2-0273-4BBD-BFE5-F40874F35303}
+		{8E708A02-783F-4E64-B9D8-3D81D581B9EE} = {CC083FD2-0273-4BBD-BFE5-F40874F35303}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DA7E531D-575C-4FD7-81B4-6BC0E4D9286E}
+	EndGlobalSection
+EndGlobal
