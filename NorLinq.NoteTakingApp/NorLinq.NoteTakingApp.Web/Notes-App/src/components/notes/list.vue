@@ -41,16 +41,6 @@ export default defineComponent({
         }
     },
     setup() {
-        const editNote = (Id: number) => {
-            console.log(Id);
-        }
-
-        const deleteNote = (Id: number) => {
-            console.log(Id);
-        }
-
-        return { editNote, deleteNote }
-
     }
 })
 </script>

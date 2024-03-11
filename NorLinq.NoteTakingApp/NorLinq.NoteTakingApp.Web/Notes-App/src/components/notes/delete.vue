@@ -21,12 +21,12 @@ export default defineComponent({
 
         const onDeleteClick = () => {
             console.log(props.noteId);
-            debugger;
+
             new NotesApiService()
                 .deleteNote(props.noteId)
                 .then((response: any) => {
                     console.log(response.data);
-                    debugger;
+
                     if (response.data != null && response.data > 0) {
                         alert('notes deleted successfully');
                         location.reload();
