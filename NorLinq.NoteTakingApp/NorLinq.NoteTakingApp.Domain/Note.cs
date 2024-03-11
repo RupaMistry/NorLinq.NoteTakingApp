@@ -15,6 +15,6 @@ namespace NorLinq.NoteTakingApp.Domain
 
         public DateTime CreatedDate { get; set; }
 
-        //public string ColorCode { get; set; }
+        public string ColorCode { get; set; }
     }
 }
