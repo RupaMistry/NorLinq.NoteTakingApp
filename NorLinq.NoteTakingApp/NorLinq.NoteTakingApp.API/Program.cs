@@ -20,6 +20,13 @@ builder.Services.AddDbContext<NotesAppContext>(options =>
 builder.Services.AddScoped<INotesService<Note>, NotesService>();
 builder.Services.AddScoped<IRepository<Note>, NotesRepository>();
 
+// Allow Cors
+builder.Services.AddCors(p => p.AddPolicy("corsapp", policy =>
+{
+    policy.WithHeaders("*").AllowAnyMethod().AllowAnyHeader();
+}));
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -34,5 +41,11 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors((opt) =>
+{
+    opt.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+});
+
 
 app.Run();
