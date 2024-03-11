@@ -26,7 +26,17 @@
                                 </h5>
                                 <textarea class="comment" maxlength="200" type='text' v-model="note.comment"
                                     placeholder="Note Comments" required />
-
+                                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                    <button type="button" class="btn"
+                                        v-bind:style="{ 'background-color': ColorCode.Green }"
+                                        @click="setColor(ColorCode.Green)">Green</button>
+                                    <button type="button" class="btn"
+                                        v-bind:style="{ 'background-color': ColorCode.Blue }"
+                                        @click="setColor(ColorCode.Blue)">Blue</button>
+                                    <button type="button" class="btn"
+                                        v-bind:style="{ 'background-color': ColorCode.Red }"
+                                        @click="setColor(ColorCode.Red)">Red</button>
+                                </div>
                             </div>
                             <div class="card-footer text-body-secondary">
                                 {{ new Date().toDateString() }}
@@ -49,13 +59,14 @@
 import { defineComponent, ref } from 'vue'
 import { NotesApiService } from "../../api_services/NotesApiService"
 import { Modal } from 'bootstrap'
+import ColorCode from '@/models/ColorCode';
 
 export default defineComponent({
     components: {},
     name: 'CreateNote',
     setup() {
 
-        const note = ref<Note>({ title: '', comment: '' });
+        const note = ref<Note>({ title: '', comment: '', colorCode: ColorCode.Green });
 
         let addNoteModal = null;
 
@@ -66,7 +77,7 @@ export default defineComponent({
 
         const onCreateClick = () => {
             new NotesApiService()
-                .addNote(note.value.title, note.value.comment)
+                .addNote(note.value.title, note.value.comment, note.value.colorCode)
                 .then((response: any) => {
                     console.log(response.data);
 
@@ -78,7 +89,11 @@ export default defineComponent({
                 });
         }
 
-        return { note, showModal, onCreateClick }
+        const setColor = (color: ColorCode) => {
+            note.value.colorCode = color;
+        }
+
+        return { note, showModal, onCreateClick, ColorCode, setColor }
     }
 })
 </script>

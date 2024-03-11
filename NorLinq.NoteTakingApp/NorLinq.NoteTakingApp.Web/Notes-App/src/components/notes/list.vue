@@ -5,7 +5,7 @@
                 <li v-for="note in  notes" :key="note.id" class="col-4">
                     <br>
                     <div>
-                        <div class="card">
+                        <div class="card" v-bind:style="{ 'background-color': note.colorCode }">
                             <DeleteNote :noteId="note.id" />
                             <div class="card-body text-center">
                                 <h5 class="card-title">{{ note.title }}</h5>

@@ -19,12 +19,13 @@ export class NotesApiService {
     }
   }
 
-  public addNote(title:string,comment:string): Promise<Note> | any {
+  public addNote(title:string,comment:string,colorCode:string): Promise<Note> | any {
      try { 
       const note : Note={
                 id:0,
                 title:title,
-                comment:comment };
+                comment:comment,
+                colorCode:colorCode };
       
       return axios.post(apiUrls.notesApiURL,note);      
     } 
@@ -33,6 +34,22 @@ export class NotesApiService {
       return null;
     }
   }
+
+  public updateNote(title:string,comment:string,colorCode:string): Promise<Note> | any {
+     try { 
+      const note : Note={
+                id:0,
+                title:title,
+                comment:comment,
+                colorCode:colorCode };
+      
+      return axios.put(apiUrls.notesApiURL,note);      
+    } 
+    catch (error) { 
+      console.error(error);
+      return null;
+    }
+  }  
 
   public deleteNote(id:number): Promise<Note> | any {
      try {  
