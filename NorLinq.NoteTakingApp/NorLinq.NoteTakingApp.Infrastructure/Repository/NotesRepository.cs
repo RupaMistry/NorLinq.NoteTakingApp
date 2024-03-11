@@ -10,7 +10,6 @@ namespace NorLinq.NoteTakingApp.Infrastructure.Repository
 
         public NotesRepository(NotesAppContext dbContext) => this._notesAppContext = dbContext;
 
-
         public async Task<IReadOnlyList<Note>> GetAll()
         {
             var notes = await this._notesAppContext.Notes.OrderBy(n => n.CreatedDate).ToListAsync();
@@ -39,13 +38,18 @@ namespace NorLinq.NoteTakingApp.Infrastructure.Repository
 
         public async Task<Note> Update(int ID, Note note)
         {
+            var checkNote = await this._notesAppContext.Notes
+                .AsNoTracking()
+                .FirstOrDefaultAsync(n=>n.ID==ID);
+
+            if (checkNote == null)
+                return null;
+
             this._notesAppContext.Entry(note).State = EntityState.Modified;
 
             await this._notesAppContext.SaveChangesAsync();
-
-            var updatedNote = await this._notesAppContext.Notes.FirstOrDefaultAsync(n => n.ID == ID);
-
-            return updatedNote;
+           
+            return note;
         }
 
         public async Task<int> Delete(int ID)
