@@ -6,6 +6,7 @@
                     <br>
                     <div>
                         <div class="card">
+                            <DeleteNote :noteId="note.id" />
                             <div class="card-body text-center">
                                 <h5 class="card-title">{{ note.title }}</h5>
                                 <p class="card-text">
@@ -28,10 +29,11 @@
 <script lang="ts">
 import type Note from '@/models/Note';
 import { defineComponent, type PropType } from 'vue'
+import DeleteNote from './delete.vue'
 
 export default defineComponent({
     name: 'ListNotes',
-    components: {},
+    components: { DeleteNote },
     props: {
         notes: {
             required: true,
@@ -39,6 +41,15 @@ export default defineComponent({
         }
     },
     setup() {
+        const editNote = (Id: number) => {
+            console.log(Id);
+        }
+
+        const deleteNote = (Id: number) => {
+            console.log(Id);
+        }
+
+        return { editNote, deleteNote }
 
     }
 })

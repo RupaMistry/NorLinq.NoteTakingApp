@@ -33,4 +33,15 @@ export class NotesApiService {
       return null;
     }
   }
+
+  public deleteNote(id:number): Promise<Note> | any {
+     try {  
+
+      return axios.delete(apiUrls.notesApiURL+'/'+id);      
+    } 
+    catch (error) { 
+      console.error(error);
+      return null;
+    }
+  }
 }

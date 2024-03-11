@@ -117,7 +117,7 @@
             return CreatedAtAction(nameof(GetNote), new { id = note.ID }, null);
         }
 
-        [Route("{id}")]
+        [Route("notes/{id:int}")]
         [HttpDelete]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
