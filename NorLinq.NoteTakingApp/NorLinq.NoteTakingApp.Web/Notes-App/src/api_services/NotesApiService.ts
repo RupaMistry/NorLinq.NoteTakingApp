@@ -17,5 +17,20 @@ export class NotesApiService {
       console.error(error);
       return [];
     }
-  } 
+  }
+
+  public addNote(title:string,comment:string): Promise<Note> | any {
+     try { 
+      const note : Note={
+                id:0,
+                title:title,
+                comment:comment };
+      
+      return axios.post(apiUrls.notesApiURL,note);      
+    } 
+    catch (error) { 
+      console.error(error);
+      return null;
+    }
+  }
 }

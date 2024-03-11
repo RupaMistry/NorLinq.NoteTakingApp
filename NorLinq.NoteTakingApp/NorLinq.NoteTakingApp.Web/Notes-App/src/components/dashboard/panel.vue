@@ -3,7 +3,7 @@
         <br>
         <dashboard-header />
         <div class="row">
-            create new note popup
+            <CreateNote />
         </div>
     </div>
 </template>
@@ -12,10 +12,11 @@
 
 import { defineComponent } from "vue";
 import dashboardHeader from './header.vue';
+import CreateNote from '../notes/create.vue'
 
 export default defineComponent({
     name: 'DashboardPanel',
-    components: { dashboardHeader },
+    components: { dashboardHeader, CreateNote },
     setup() {
     }
 })
