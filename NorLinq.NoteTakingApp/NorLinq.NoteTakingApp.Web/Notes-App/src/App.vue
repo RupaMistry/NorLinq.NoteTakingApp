@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="container">
-      Hi
+      <DashboardPanel />
       <ListNotes :notes="notes" />
     </div>
   </header>
@@ -13,10 +13,11 @@ import { defineComponent, ref } from "vue";
 import type Note from "./models/Note";
 import ListNotes from './components/notes/list.vue'
 import { NotesApiService } from "./api_services/NotesApiService";
+import DashboardPanel from './components/dashboard/panel.vue'
 
 export default defineComponent({
   name: 'App',
-  components: { ListNotes },
+  components: { ListNotes, DashboardPanel },
   setup() {
     const notes = ref<Note[]>([]);
 
