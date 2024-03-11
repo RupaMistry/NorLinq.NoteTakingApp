@@ -12,6 +12,7 @@
 import { defineComponent, ref } from "vue";
 import type Note from "./models/Note";
 import ListNotes from './components/notes/list.vue'
+import { NotesApiService } from "./api_services/NotesApiService";
 
 export default defineComponent({
   name: 'App',
@@ -20,6 +21,9 @@ export default defineComponent({
     const notes = ref<Note[]>([]);
 
     return { notes }
+  },
+  async created() {
+    this.notes = await new NotesApiService().getAllNotes();
   }
 })
 
